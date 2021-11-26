@@ -23,4 +23,4 @@ A results generator and automatic token checker for Yandex Contest.
 
 ## Contributing
 
-See [Contributing](Contributing.md)
+See [Contributing](CONTRIBUTING.md)

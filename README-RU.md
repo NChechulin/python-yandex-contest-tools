@@ -21,4 +21,4 @@
 
 ## Содействие разработке
 
-Смотрите [Contributing](Contributing.md)
+Смотрите [Contributing](CONTRIBUTING.md)
