@@ -15,7 +15,7 @@ class OutputFormat(Enum):
 
 @dataclass(init=False)
 class Config:
-    submissions_dir: str
+    submissions_dir: Path
     output_format: OutputFormat
     students_names: List[str]
     tasks: List[Task]
@@ -28,7 +28,7 @@ class Config:
         try:
             # TODO: try to avoid manual assignment
             data = load_toml_file(config_path)["config"]
-            self.submissions_dir = data["submissions_dir"]
+            self.submissions_dir = Path(data["submissions_dir"])
             self.output_format = OutputFormat(data["output_format"])
             self.students_names = data["students_names"]
 
