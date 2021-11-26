@@ -30,8 +30,7 @@ class Student:
         )
 
         if not self.personal_solutions_dir:
-            print(info_strings.WARN_NO_STUDENT_DIR, name)
-            del self
+            raise Exception(info_strings.WARN_NO_STUDENT_DIR + name)
 
         # get all OK submissions
         self.ok_sulutions = list(
@@ -44,7 +43,6 @@ class Student:
             )
         )
 
-        print(self.ok_sulutions)
 
     @staticmethod
     def _find_solutions_dir_by_name(student_name: str, submissions_dir: Path) -> Path:
@@ -58,7 +56,6 @@ class Student:
         """Returns a list of OK solutions to the task"""
         ans = []
         for solution in self.ok_sulutions:
-            print(solution.stem)
             if solution.stem.startswith(task_name + "-"):
                 ans.append(solution)
         return ans

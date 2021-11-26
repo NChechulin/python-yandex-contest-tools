@@ -22,8 +22,15 @@ def create_config(args) -> Config:
 if __name__ == "__main__":
     args = parse_args()
     config = create_config(args)
-    
-    task = config.tasks[1]
-    me = Student("Nikolay Chechulin", config.submissions_dir)
-    me.generate_results(config.tasks)
-    print(me.results)
+
+    students = []
+
+    for name in config.students_names:
+        try:
+            student = Student(name, config.submissions_dir)
+            student.generate_results(config.tasks)
+            students.append(student)
+            print(student.results)
+            print("-------------------------")
+        except Exception as e:
+            print(e)
