@@ -1,0 +1,50 @@
+# Read the TOML specification before editing the file!
+# Link: https://toml.io/
+
+# You can place any information you want here.
+# This section is not parsed by the program and can be used to manage your config files
+[info]
+author = "Nikolay Chechulin"
+contest_name = "Contest 5"
+
+[config]
+# Path to a folder with students submissions. It should contain something like this:
+# submits
+# ├── Nikolay Chechulin-92857582
+# │   ├── 3-55518299-python3_7_3-OK.py
+# │   ├── 6-55518632-python3_7_3-OK.py
+# │   └── 9-56556460-python3_7_3-OK.py
+# ├── hse-data-2021-113-92857532
+# ...
+sumbissions_dir = "../submits/"
+
+# Can be either `csv` or `xlsx` for Excel
+output_format = "csv"
+
+# An array of names. They will be used:
+# 1) In the output table
+# 2) To match each student with their submission directory.
+# The last one is done using substrings, so be sure to specify the names properly.
+# If you have a directory `submits/Аксёнов Иван Иванович`, then you should add either
+# `Аксёнов Иван` or `Аксёнов Иван Иванович`, not Аксенов
+students_names = [
+    "Chechulin Nikolay",
+    "Surname Name",
+    "Surname Name Patronymic",
+]
+
+# Here we introduce a config for task "A"
+# **All of the tasks from the contest have to be present in the config** 
+# If a contest uses numbers, then write `[config.tasks.1], ...`
+# A task name will be used to match each submission with a task.
+# For instance, if you have a submission file named `12-55517774-python3_7_3-OK.py`,
+# then the task name should be `12`
+[config.tasks.A]
+
+# This is configuration of another task
+# The task has some requirements:
+# 1) Student has to use keywords `def` and `return`
+# 2) Student can not use `for` keyword
+[config.tasks.B]
+required_tokens = ["def", "return"]
+banned_tokens = ["for"]
