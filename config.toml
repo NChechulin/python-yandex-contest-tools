@@ -16,7 +16,7 @@ contest_name = "Contest 5"
 # │   └── 9-56556460-python3_7_3-OK.py
 # ├── hse-data-2021-113-92857532
 # ...
-sumbissions_dir = "../submits/"
+submissions_dir = "../submits/"
 
 # Can be either `csv` or `xlsx` for Excel
 output_format = "csv"
