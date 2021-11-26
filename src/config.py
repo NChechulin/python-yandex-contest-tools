@@ -17,6 +17,9 @@ class OutputFormat(Enum):
 class Config:
     submissions_dir: Path
     output_format: OutputFormat
+    solved_symbol: str
+    banned_symbol: str
+    not_solved_symbol: str
     students_names: List[str]
     tasks: List[Task]
 
@@ -30,6 +33,9 @@ class Config:
             data = load_toml_file(config_path)["config"]
             self.submissions_dir = Path(data["submissions_dir"])
             self.output_format = OutputFormat(data["output_format"])
+            self.solved_symbol = data["solved_symbol"]
+            self.banned_symbol = data["banned_symbol"]
+            self.not_solved_symbol = data["not_solved_symbol"]
             self.students_names = data["students_names"]
 
             self.tasks = []

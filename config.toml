@@ -21,6 +21,11 @@ submissions_dir = "../submits/"
 # Can be either `csv` or `xlsx` for Excel
 output_format = "csv"
 
+# Values which will be put into the resulting talbe
+solved_symbol = "1"       # Symbol when task is correctly solved
+banned_symbol = "0"       # Symbol when task was solved by banned by validator
+not_solved_symbol = "0"   # Symbol when task was not solved
+
 # An array of names. They will be used:
 # 1) In the output table
 # 2) To match each student with their submission directory.
