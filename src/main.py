@@ -7,13 +7,13 @@ from export import CSVExporter
 
 def parse_args() -> "args":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", required=True, help="Path to `config.toml` file")
+    parser.add_argument("--config-path", required=True, help="Path to `config.toml` file")
     return parser.parse_args()
 
 
 def create_config(args) -> Config:
     try:
-        path = Path(args.path)
+        path = Path(args.config_path)
         return Config(path)
     except Exception as e:
         print("ERROR:", e)
