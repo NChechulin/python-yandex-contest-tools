@@ -1,6 +1,7 @@
 import argparse
 from config import Config
 from pathlib import Path
+from students import Student
 
 
 def parse_args() -> "args":
@@ -21,4 +22,8 @@ def create_config(args) -> Config:
 if __name__ == "__main__":
     args = parse_args()
     config = create_config(args)
-    print(config)
+    
+    task = config.tasks[1]
+    me = Student("Nikolay Chechulin", config.submissions_dir)
+    me.generate_results(config.tasks)
+    print(me.results)
