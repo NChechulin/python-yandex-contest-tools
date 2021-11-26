@@ -3,6 +3,7 @@ from config import Task, Config
 from typing import List
 from students import Student, TaskResult
 import csv
+from pathlib import Path
 
 
 class BaseExporter:
@@ -27,7 +28,7 @@ class BaseExporter:
 
         self.tasks = config.tasks
         self.tasks.sort(key=lambda task: (len(task.name), task.name))
-        self.__set_filename()
+        self.__set_filename(config.output_dir)
 
     def __change_students_names(self):
         """Replaces `ё` with `е` in each name to sort names properly"""
@@ -42,10 +43,10 @@ class BaseExporter:
             return self.banned_symbol
         return self.not_solved_symbol
 
-    def __set_filename(self) -> str:
+    def __set_filename(self, output_dir: Path) -> str:
         """Returns a filename (stem) where the data will be saved"""
         name = datetime.now().strftime("%Y-%m-%d_%H_%M_%S")
-        self.filename = f"RESULTS_{name}.{self.extension}"
+        self.filename = output_dir / f"RESULTS_{name}.{self.extension}"
 
     def __write_header_to_file(self):
         """Writes column names"""

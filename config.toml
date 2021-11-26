@@ -11,20 +11,23 @@ contest_name = "Contest 5"
 # Path to a folder with students submissions. It should contain something like this:
 # submits
 # ├── Nikolay Chechulin-92857582
-# │   ├── 3-55518299-python3_7_3-OK.py
-# │   ├── 6-55518632-python3_7_3-OK.py
-# │   └── 9-56556460-python3_7_3-OK.py
+# │   ├── 3-55518299-python3_7_3-OK.py
+# │   ├── 6-55518632-python3_7_3-OK.py
+# │   └── 9-56556460-python3_7_3-OK.py
 # ├── hse-data-2021-113-92857532
 # ...
 submissions_dir = "../submits/"
+
+# Path to a folder where the resulting file will be placed
+output_dir = "../output/"
 
 # Can be either `csv` or `xlsx` for Excel
 output_format = "csv"
 
 # Values which will be put into the resulting talbe
-solved_symbol = "1"       # Symbol when task is correctly solved
-banned_symbol = "0"       # Symbol when task was solved by banned by validator
-not_solved_symbol = "0"   # Symbol when task was not solved
+solved_symbol = "1"     # Symbol when task is correctly solved
+banned_symbol = "0"     # Symbol when task was solved by banned by validator
+not_solved_symbol = "0" # Symbol when task was not solved
 
 # An array of names. They will be used:
 # 1) In the output table

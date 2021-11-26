@@ -16,6 +16,7 @@ class OutputFormat(Enum):
 @dataclass(init=False)
 class Config:
     submissions_dir: Path
+    output_dir: Path
     output_format: OutputFormat
     solved_symbol: str
     banned_symbol: str
@@ -32,6 +33,7 @@ class Config:
             # TODO: try to avoid manual assignment
             data = load_toml_file(config_path)["config"]
             self.submissions_dir = Path(data["submissions_dir"])
+            self.output_dir = Path(data["output_dir"])
             self.output_format = OutputFormat(data["output_format"])
             self.solved_symbol = data["solved_symbol"]
             self.banned_symbol = data["banned_symbol"]
