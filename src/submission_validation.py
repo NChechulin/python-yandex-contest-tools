@@ -103,7 +103,7 @@ class Validator:
         Returns `None` if no errors were found, `ValidationResult` otherwise.
         """
 
-        assert file_path.exists(), strings.ERR_SUBMISSION_DOES_NOT_EXIST
+        assert file_path.exists(), info_strings.ERR_SUBMISSION_DOES_NOT_EXIST
 
         result = ValidationResult(
             file_path,
