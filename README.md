@@ -18,7 +18,7 @@ A results generator and automatic token checker for Yandex Contest.
 2. Click "Архив посылок по фильтру"
 3. Extract the downloaded archive somewhere
 4. Specify path to a folder with submissions in `config.toml`
-5. Launch the program: `python3 src/main.py --config-path "<path_to_config.toml>".
+5. Launch the program: `python3 src/main.py --config-path "<path_to_config.toml>"`.
    Note that you are allowed to name your config however you want - just pass the correct argument and you are ready to go.
 
 ## Contributing
