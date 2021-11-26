@@ -29,8 +29,11 @@ class Student:
             name, submissions_dir
         )
 
+        # user did not write the contest
         if not self.personal_solutions_dir:
-            raise Exception(info_strings.WARN_NO_STUDENT_DIR + name)
+            print(info_strings.WARN_NO_STUDENT_DIR, name)
+            self.ok_sulutions = []
+            return
 
         # get all OK submissions
         self.ok_sulutions = list(

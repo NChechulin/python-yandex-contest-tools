@@ -2,6 +2,7 @@ import argparse
 from config import Config
 from pathlib import Path
 from students import Student
+from export import CSVExporter
 
 
 def parse_args() -> "args":
@@ -30,7 +31,8 @@ if __name__ == "__main__":
             student = Student(name, config.submissions_dir)
             student.generate_results(config.tasks)
             students.append(student)
-            print(student.results)
-            print("-------------------------")
         except Exception as e:
             print(e)
+
+    exporter = CSVExporter(students, config)
+    exporter.write()
