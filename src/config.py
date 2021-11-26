@@ -42,9 +42,3 @@ class Config:
         except KeyError as e:
             print(info_strings.ERR_CONFIG_MISSING_FIELD, e)
             exit(1)
-
-
-if __name__ == "__main__":
-    path = Path("../config.toml")
-    config = Config(path)
-    print(config)
