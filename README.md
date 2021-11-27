@@ -20,6 +20,7 @@ A results generator and automatic token checker for Yandex Contest.
 4. Specify path to a folder with submissions in `config.toml`
 5. Launch the program: `python3 src/main.py --config-path "<path_to_config.toml>"`.
    Note that you are allowed to name your config however you want - just pass the correct argument and you are ready to go.
+6. Open the generated file **in a table processor** like LibreOffice Calc or Microsoft Excel. Then copy the scores and paste them into your file. Ensure that order of students is correct.
 
 ## Contributing
 
