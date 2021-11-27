@@ -56,3 +56,15 @@ students_names = [
 [config.tasks.B]
 required_tokens = ["def", "return"]
 banned_tokens = ["for"]
+
+# If you have multiple tasks with same parameters, you can use shortcuts.
+# They support only numbers and letters, for instance the following will create
+# 12 tasks without required tokens
+[config.tasks.1-12]
+
+# Also we can use letters. This will give us tasks C, D, E, F, G with
+# `for` as required token.
+# Do not mix letters and numbers!       Wrong: `[config.tasks.1-A]`
+# Only 1-letter strings are supported.  Wrong: `[config.tasks.A-BY]`
+[config.tasks.C-G]
+required_tokens = ["for"]
