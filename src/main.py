@@ -7,7 +7,9 @@ from export import CSVExporter
 
 def parse_args() -> "args":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config-path", required=True, help="Path to `config.toml` file")
+    parser.add_argument(
+        "--config-path", required=True, help="Path to `config.toml` file"
+    )
     return parser.parse_args()
 
 
