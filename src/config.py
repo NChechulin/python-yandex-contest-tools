@@ -63,6 +63,8 @@ class Config:
         """Parses tasks with shortcut like 1-4 into multiple tasks"""
         result = []
         fr, to = shortcut.split("-")
+        self.__validate_correct_shortcut(fr, to)
+
         if is_number(fr) and is_number(to):
             for ind in range(int(fr), int(to) + 1):
                 result.append(Task(str(ind), required_tokens, banned_tokens))
@@ -87,4 +89,32 @@ class Config:
                     result.append(task)
             else:
                 result.append(Task(name, required_tokens, banned_tokens))
+        self.__validate_task_names([task.name for task in result])
         return result
+
+    def __validate_task_names(self, names: List[str]):
+        """Checks that all task names are correct"""
+        if len(set(names)) != len(names):
+            print(info_strings.ERR_DUPLICATE_TASKS)
+            exit(1)
+
+    def __validate_correct_shortcut(self, fr: str, to: str):
+        if is_number(fr) and is_number(to):
+            if fr > to:
+                print(info_strings.ERR_WRONG_NUMBER_RANGE_SPECIFIED)
+                exit(1)
+            return
+
+        int_str = is_number(fr) and (not is_number(to))
+        str_int = (not is_number(fr)) and is_number(to)
+
+        if int_str or str_int:
+            print(info_strings.ERR_MIXING_NUMBERS_WITH_LETTERS)
+            exit(1)
+        else:
+            if len(fr) > 1 or len(to) > 1:
+                print(info_strings.ERR_NO_MULTIPLE_LETTERS_ALLOWED)
+                exit(1)
+            if ord(fr) > ord(to):
+                print(info_strings.ERR_WRONG_NUMBER_RANGE_SPECIFIED)
+                exit(1)
