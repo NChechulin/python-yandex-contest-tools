@@ -10,4 +10,3 @@ class Task:
     required_tokens: List[str]
     banned_tokens: List[str]
 
-    # TODO: implement validating a submission
