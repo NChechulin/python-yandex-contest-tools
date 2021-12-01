@@ -66,6 +66,6 @@ banned_tokens = ["for"]
 # `for` as required token.
 # Do not mix letters and numbers!       Wrong: `[config.tasks.1-A]`
 # Only 1-letter strings are supported.  Wrong: `[config.tasks.A-BY]`
-# Be sure that left boundary is smaller than the right one. Wrong: `[config.tasks.1-12]
+# Be sure that left boundary is smaller than the right one. Wrong: `[config.tasks.12-1]
 [config.tasks.C-G]
 required_tokens = ["for"]
