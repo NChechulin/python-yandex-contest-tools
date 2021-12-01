@@ -22,3 +22,6 @@ ERR_WRONG_NUMBER_RANGE_SPECIFIED = colored(
 ERR_NO_MULTIPLE_LETTERS_ALLOWED = colored(
     "No multiletter shortcuts are allowed. Wrong: A-BY", "red"
 )
+ERR_WRONG_OUTPUT_FORMAT = colored(
+    "Wrong output format. Only `csv` or `xlsx` output formats are allowed", "red"
+)

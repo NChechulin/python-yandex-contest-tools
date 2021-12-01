@@ -1,8 +1,8 @@
 import argparse
-from config import Config
+from config import Config, OutputFormat
 from pathlib import Path
 from students import Student
-from export import CSVExporter
+from export import CSVExporter, XLSXExporter
 
 
 def parse_args() -> "args":
@@ -36,5 +36,9 @@ if __name__ == "__main__":
         except Exception as e:
             print(e)
 
-    exporter = CSVExporter(students, config)
+    if config.output_format == OutputFormat.CSV:
+        exporter = CSVExporter(students, config)
+    elif config.output_format == OutputFormat.XLSX:
+        exporter = XLSXExporter(students, config)
+
     exporter.write()

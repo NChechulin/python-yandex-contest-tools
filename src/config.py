@@ -43,18 +43,21 @@ class Config:
             data = load_toml_file(config_path)["config"]
             self.submissions_dir = Path(data["submissions_dir"])
             self.output_dir = Path(data["output_dir"])
-            self.output_format = OutputFormat(data["output_format"])
+            self.output_format = OutputFormat(data["output_format"].lower())
             self.solved_symbol = data["solved_symbol"]
             self.banned_symbol = data["banned_symbol"]
             self.not_solved_symbol = data["not_solved_symbol"]
             self.students_names = data["students_names"]
 
             self.tasks = self.__parse_tasks(data["tasks"])
-
         except TomlDecodeError as e:
             print(info_strings.ERR_CONFIG_INVALID_TOML, e)
+            exit(1)
         except KeyError as e:
             print(info_strings.ERR_CONFIG_MISSING_FIELD, e)
+            exit(1)
+        except ValueError:
+            print(info_strings.ERR_WRONG_OUTPUT_FORMAT)
             exit(1)
 
     def __parse_tasks_shortcut(
