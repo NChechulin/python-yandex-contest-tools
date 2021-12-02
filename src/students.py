@@ -19,6 +19,7 @@ class TaskResult(Enum):
 @dataclass(init=False)
 class Student:
     """Finds and checks all the solutions by a student's name"""
+
     name: str
     results: Dict[str, TaskResult]
     personal_solutions_dir: Path
@@ -47,7 +48,6 @@ class Student:
                 ),
             )
         )
-
 
     @staticmethod
     def _find_solutions_dir_by_name(student_name: str, submissions_dir: Path) -> Path:

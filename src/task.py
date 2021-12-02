@@ -10,4 +10,3 @@ class Task:
     name: str
     required_tokens: List[str]
     banned_tokens: List[str]
-
