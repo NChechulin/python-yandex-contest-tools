@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from pydantic.dataclasses import dataclass
 from enum import Enum
 from typing import List, Dict
 from task import Task

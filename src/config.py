@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from pydantic.dataclasses import dataclass
 from toml import load as load_toml_file
 from toml.decoder import TomlDecodeError
 from typing import List, Dict
