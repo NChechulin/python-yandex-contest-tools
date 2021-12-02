@@ -1,10 +1,12 @@
-from datetime import datetime
-from config import Task, Config
-from typing import List
-from students import Student, TaskResult
 import csv
+from datetime import datetime
 from pathlib import Path
+from typing import List
+
 from openpyxl import Workbook
+
+from config import Config, Task
+from students import Student, TaskResult
 
 
 class BaseExporter:

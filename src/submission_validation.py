@@ -1,7 +1,8 @@
-from typing import Optional, List
 from pathlib import Path
-from pydantic.dataclasses import dataclass
 from tokenize import tokenize
+from typing import List, Optional
+
+from pydantic.dataclasses import dataclass
 
 import info_strings
 

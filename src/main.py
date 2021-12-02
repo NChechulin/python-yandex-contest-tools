@@ -1,8 +1,9 @@
 import argparse
-from config import Config, OutputFormat
 from pathlib import Path
-from students import Student
+
+from config import Config, OutputFormat
 from export import CSVExporter, XLSXExporter
+from students import Student
 
 
 def parse_args() -> "args":

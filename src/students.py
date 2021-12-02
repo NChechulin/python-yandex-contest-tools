@@ -1,11 +1,13 @@
-from pydantic.dataclasses import dataclass
 from enum import Enum
-from typing import List, Dict
-from task import Task
-from pathlib import Path
 from os import listdir
-from submission_validation import Validator
+from pathlib import Path
+from typing import Dict, List
+
+from pydantic.dataclasses import dataclass
+
 import info_strings
+from submission_validation import Validator
+from task import Task
 
 
 class TaskResult(Enum):

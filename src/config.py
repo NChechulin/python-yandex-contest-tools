@@ -1,10 +1,12 @@
+from enum import Enum
+from pathlib import Path
+from typing import Dict, List
+
 from pydantic.dataclasses import dataclass
 from toml import load as load_toml_file
 from toml.decoder import TomlDecodeError
-from typing import List, Dict
-from enum import Enum
+
 import info_strings
-from pathlib import Path
 from task import Task
 
 

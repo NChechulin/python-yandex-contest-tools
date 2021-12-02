@@ -1,5 +1,6 @@
-from pydantic.dataclasses import dataclass
 from typing import List
+
+from pydantic.dataclasses import dataclass
 
 
 @dataclass
