@@ -1,5 +1,7 @@
 # Yandex contest Python checking tools
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/2c3fb727867d31dd39b6/maintainability)](https://codeclimate.com/github/NChechulin/python-yandex-contest-tools/maintainability)
+
 A results generator and automatic token checker for Yandex Contest.
 
 [Версия на русском языке](README-RU.md)
