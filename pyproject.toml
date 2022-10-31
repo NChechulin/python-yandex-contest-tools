@@ -9,7 +9,7 @@ license = "MIT"
 python = "^3.9"
 openpyxl = "^3.0.10"
 pydantic = "^1.9.1"
-termcolor = "^1.1.0"
+termcolor = "^2.0.0"
 toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
